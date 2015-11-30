@@ -1,0 +1,71 @@
+{
+    "user": {
+        "debug": true,
+        "delay": 0.25,
+        "error_color": "D02000",
+        "gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
+        "gutter_theme_excludes": [],
+        "lint_mode": "background",
+        "linters": {
+            "clang": {
+                "@disable": false,
+                "args": [],
+                "chdir": "/home/jdonner/src/sds2",
+                "excludes": [],
+                "extra_flags": "-include /home/jdonner/src/sds2/include/sds2/sds2.h -DDWFCORE_STATIC -DDWFTK_STATIC -DSDS2_USE_SYSTEM_VALGRIND -DHAVE_STEPTOOLS -DHAVE_LIMITS_H -DHAVE_OPENDESIGN -DHAVE_UNISTD_H -DLINUX -DSCAN_BUILD -D_POSIX_C_SOURCE=200112L -Uunix -D_XOPEN_SOURCE=600 -fmessage-length=0 -ftemplate-depth=512 -fno-strict-aliasing -fno-strict-overflow -O3 -W -Wall -Werror=pointer-arith -Werror=write-strings -Wlarger-than-655360 -Wno-redeclared-class-member -Wno-error=parentheses -Wno-error=uninitialized -Wno-sign-compare -Wno-unused-parameter -Wno-missing-field-initializers -Wno-deprecated-register -pipe -DNOT_SERIALIZATION -Wno-error=narrowing -x c++ -std=gnu++11 -Wmismatched-tags -Wno-error=mismatched-tags -Wno-invalid-offsetof -Dunix",
+                "include_dirs": [
+                    "/home/jdonner/src/sds2/include",
+                    "/usr/include/c++/4.7",
+                    "/usr/include/freetype2",
+                    "/home/jdonner/src/sds2/tools/tcltk85-for-sds2-2016/linux64-gcc46/include",
+                    "/home/jdonner/src/sds2/tools/tcltk85-for-sds2-2016/linux32-gcc46/include",
+                    "/home/jdonner/src/sds2/tools/tcltk85-for-sds2-2016/include",
+                    "/home/jdonner/src/sds2/tools/boost-for-sds2-2016/include",
+                    "/home/jdonner/src/sds2/tools/python-for-sds2-2014/linux64-gcc46/include/python2.7",
+                    "/home/jdonner/src/sds2/tools/thirdparty-libs-for-sds2-2015/linux64-gcc46/include",
+                    "/home/jdonner/src/sds2/tools/thirdparty-libs-for-sds2-2015/glew/include",
+                    "/home/jdonner/src/sds2/tools/thirdparty-libs-for-sds2-2015/json_spirit",
+                    "/home/jdonner/src/sds2/tools/dwftoolkit-for-sds2-2015/include",
+                    "/home/jdonner/src/sds2/tools/dwftoolkit-for-sds2-2015/include/dwf/w3dtk",
+                    "/home/jdonner/src/sds2/tools/OpenDesign-for-sds2-2015/include/Core",
+                    "/home/jdonner/src/sds2/tools/OpenDesign-for-sds2-2015/include/Dgn",
+                    "/home/jdonner/src/sds2/tools/thirdparty-libs-for-sds2-2015/include/freetype",
+                    "/home/jdonner/src/sds2/tools/libharu2-for-sds2-2014/include",
+                    "/home/jdonner/src/sds2/tools/hiredis-for-sds2-2016/include",
+                    "/home/jdonner/src/sds2/tools/tomcrypt-for-sds2-2016/include",
+                    "/home/jdonner/src/sds2/tools/steptools-16/include/ifc2x3lib",
+                    "/home/jdonner/src/sds2/rapidjson/include",
+                    "/home/jdonner/src/sds2/src"
+                ]
+            }
+        },
+        "mark_style": "squiggly underline",
+        "no_column_highlights_line": false,
+        "passive_warnings": false,
+        "paths": {
+            "linux": [],
+            "osx": [],
+            "windows": []
+        },
+        "python_paths": {
+            "linux": [],
+            "osx": [],
+            "windows": []
+        },
+        "rc_search_limit": 3,
+        "shell_timeout": 10,
+        "show_errors_on_save": false,
+        "show_marks_in_minimap": true,
+        "syntax_map": {
+            "html (django)": "html",
+            "html (rails)": "html",
+            "html 5": "html",
+            "javascript (babel)": "javascript",
+            "magicpython": "python",
+            "php": "html",
+            "python django": "python"
+        },
+        "warning_color": "DDB700",
+        "wrap_find": true
+    }
+}

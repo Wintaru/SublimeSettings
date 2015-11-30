@@ -1,0 +1,28 @@
+{
+        "auto_complete": true,
+        "auto_complete_selector": "source - comment",
+        "auto_complete_triggers":
+        [
+            {
+                "characters": "."
+            },
+            {
+                "characters": ">"
+            },
+            {
+                "characters": ":"
+            },
+        ],
+        "config":[
+                {
+                        "name":"NOT_SERIALIZATION",
+                        "startMarker": "#ifdef NOT_SERIALIZATION",
+                        "endMarker": "#endif"
+                }
+        ],
+        "extensions":
+        [
+            "c",
+            "h"
+        ]
+}
