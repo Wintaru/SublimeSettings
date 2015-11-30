@@ -6,5 +6,7 @@
     },
     { "keys": ["shift+tab"], "command": "vim_shift_tab_press" },
     { "keys": ["ctrl+shift+up"], "command": "fold" },
-    { "keys": ["ctrl+shift+down"], "command": "unfold" }
+    { "keys": ["ctrl+shift+down"], "command": "unfold" },
+    { "keys": ["super+v"], "command" : "paste_and_indent" },
+    { "keys": ["super+shift+v"], "command": "paste" }
 ]

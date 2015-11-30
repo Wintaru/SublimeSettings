@@ -1,0 +1,135 @@
+= Navigation Tools =
+
+-----
+
+== Goto Defnition (Function/Class/Constant) ==
+
+ *Goto Anything (Built into Sublime Text)
+  *Goto Command Palatte: Control + Shift + P
+   *Allows access to editor commands
+   *Can use to look up keyboard commands if forgot
+   *Can access commands from the editor and any installed plugins
+ *Goto Anything: Control + P
+  *Allows you to find any file in the project
+ *Goto Line Number: Control + G (or : in Goto Anything)
+  *Jumps the view to a specific line number in the current file
+ *Goto Symbol: Control + R (or @ in Goto Anything)
+  *Displays a list of all Functions in a file and allows navigation to each
+
+ *Stringing Goto Commands Togther (Fuzzy Search)
+  *Goto commands can be used in conjunction with the Fuzzy Search feature to jump around your project. For example, if I wanted to see the Draw function in DrawingLabel.c, I could type DraLab.c@::Draw and it will show me that file.
+
+attachment:goto_stringing_example.png
+
+== Find All References ==
+
+== Goto Compile Error ==
+
+== Window Navigation ==
+
+ *Alt + Shift + [1-4] will split into 1-4 columns
+ *Alt + Shift + 5 will give you a 4 x 4 grid
+ *Alt + Shift + 8 will give you 2 rows
+ *Alt + Shift + 9 will give you 3 rows
+ *Ctrl + [1-4] will move the cursor focus to each window, depending on how many you have open. You can also set up keybindings for next and previous if so desired (default is Ctrl + Tab and Ctrl + Shift + Tab) .
+ *Origami (Plugin)
+ *Ctrl + Shift + [1-4] will move the current tab (open file) to the window you desire.
+  *The Origami plugin lets you create window panes however you desire. Their [https://github.com/SublimeText/Origami Github Page] has more information.
+
+= Editing Tools =
+
+-----
+
+== Editor Emulation (Key Binding) ==
+
+== Code Completion ==
+ *Auto Complete (Built In)
+  *Auto complete is built into Sublime Text, it will search using open files as well as files inside of your project. The setting '''auto_complete_commit_on_tab''' will allow you to use the tab key to complete rather than hitting enter, if that is your preference.
+   *Auto complete can be turned off for languages if you set '''auto_complete''' to false in the language file in question, or you can turn it off completely in the user settings file.
+   *Auto complete can also be turned off for larger files if it is slowing you down using the '''auto_complete_size_limit''' setting, although I've never had a problem with it (even working in memb_dtl.c).
+ *ClangAutoComplete (Plugin)
+  *The built in auto complete has always been good enough for me but I've also played around with the ClangAutoComplete plugin. It seems to work well, but I haven't fiddled with it enough to see how useful it really is. I suspect an afternoon of twiddling would probably be sufficient to make it work the way you want.
+  *[https://github.com/pl-ca/ClangAutoComplete Github Page]
+ *Snippets
+  *Some snippets are built in but you can make any chunk of code you want a snippet by using the Tools > New Snippet command. This will create a new file that you can edit to create your new snippet and save it locally.
+  *Snippets can have placeholders that you define that allow you to tab to them once the snippet has been placed. They are placed using {$1} where the number is the tab order of the placeholders.
+  *You can write your own, but there are plenty of snippet packages out there via Package Control. cpp-sublime-snippet is one such that I have recently found and started using.
+   *[https://github.com/Rapptz/cpp-sublime-snippet Github Page]
+   *Other snippets can be found by hitting Ctrl + Shift + P, then type Install (to bring up the Package Manager Install program) and then type '''Snippet''' and a list of packages with snippet in the name will be displayed.
+
+== Beautify Code ==
+
+== Comment Formatting ==
+
+== Doxygen Comment Formatting ==
+
+== Active Syntax Checking ==
+
+= Debugging Tools =
+
+-----
+
+== Breakpoints ==
+
+== Source Line Stepping ==
+
+== Inspect Stack ==
+
+== View Variables ==
+
+= Refactoring Tools =
+
+-----
+
+== Change Symbol Name ==
+
+== Surround Tool ==
+
+= Other =
+
+-----
+
+== Version Control ==
+
+== SDS2 Plugins ==
+
+ *Vimdendation
+
+ *Add To Makefile.local
+
+ *Go To Header
+
+== Other Things to Consider ==
+
+ *Alias
+  *I like to have an alias set up so I can open things in Sublime from the command line. '''alias subl='/usr/bin/sublime-text'''' will do the trick.
+  *Appending '''-a''' to the '''subl''' command will open the file/folder in the currently open window if you have one up already.
+
+ *Multiple Carets
+  *Holding down Ctrl while clicking will place a caret wherever you click. Pressing Ctrl + U will undo the last caret added.
+  *Holding down Alt + Shift and pressing the Up or Down arrows will cause the caret to be duplicated on the line above/below the current caret.
+  *Pressing Ctrl + D while the caret is in a word/symbol (or with a word or symbol selected) will cause Sublime Text to find and select the next instance of that word/symbol. Repeating Ctrl + D will continue to select each subsequent instance of that word/symbol until all are found. There will be carets placed at each word.
+  *Holding down Shift while dragging using the right click on the mouse will allow you to select very specfic sections of text.
+
+ *Selection Tricks
+  *Ctrl + Shift + M will select the code from curly brace to curly brace (or square braces, or parens). Repeating the command will increase the selection level.
+  *For Python files, Ctrl + Shift + J will select all of the code at the current indendation level.
+  *Select Quoted
+   *This package will allow you to use Ctrl + ' to select and expand to quotes. Nice for grabbing printf strings and changing them or working with strings in general.
+   *[https://github.com/int3h/SublimeSelectQuoted Github Page]
+
+=== Handy Plugins ===
+-----
+ *Terminal
+
+=== Settings File ===
+-----
+Settings files are written in JSON format. The default setting file is well commented and worth taking the time to explore to get your editor set up the way you like it.
+
+I use Github to store my settings and sync them across my various machines that I use. The ~/.config/sublime-text-3/Packages/User folder is what you will want to back up if you would like to do the same.
+
+ *User Settings
+  *Excluding files/folders from Sublime Text
+   *There are 3 settings that will accomplish this. '''file_exclude_patterns''' and '''folder_exclude_patterns''' work the way one might expect with one exception: they will omit files from the sidebar as well as any Goto searches. To leave the files in the sidebar but omit from searches use '''binary_file_patterns'''.
+ *Syntax Settings
+  *There are some settings that make working on SDS2 easier, if you set up your C++.sublime-settings file to look like mine it should make life much easier. See [http://lucky.dsndata.com/cgi-bin/moin.cgi/JoshDonnerCandC++SyntaxSettings My Syntax Settings]

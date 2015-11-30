@@ -7,15 +7,19 @@
 	[
 		"Alignment",
 		"BracketHighlighter",
+		"C++ Snippets",
 		"Cscope",
 		"DocBlockr",
 		"Function Name Display",
 		"Git",
 		"GitGutter",
 		"Mediawiker",
+		"Origami",
 		"Package Control",
+		"Select Quoted",
 		"SublimeLinter",
 		"SublimeLinter-contrib-clang",
+		"Terminal",
 		"TrailingSpaces"
 	]
 }
