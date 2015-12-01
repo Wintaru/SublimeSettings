@@ -1,3 +1,9 @@
+= Package Control =
+-----
+Before I talk about anything else I want to let you know about [https://packagecontrol.io/ Package Control]. This plugin is almost a requirement when working with Sublime Text because of how easy it makes it to install plugins. Visit the site and run the install script in the console (Ctrl + ~) before continuing. Trust me.
+
+Plugins are normally installed in the ~/.config/sublime-text-3/Installed Packages folder as zipped files. If you need to modify the code for any of them you can unzip them to ~/.config/sublime-text-3/Packages/<pluginname> and delete the plugin from the Installed Packages directory.
+
 = Navigation Tools =
 -----
 == Goto Defnition (Function/Class/Constant) ==
@@ -21,7 +27,26 @@ attachment:goto_stringing_example.png
 
 == Find All References ==
 
+ *There are several choices for this feature, namely plugins for rtags and cscope. I use cscope myself but rtags will probably have longer term support and be more accurate once the wrinkles are ironed out.
+  *The cscope plugin is very easy to use and set up. There is virtually no configuration needed (at least that I found). You will however need to generate the cscope database using the command {{{cscope -b -q -k -R}}}. This will be required when changing branches or after making changes.
+   *Ctrl + \ will show cscope options
+   *Ctrl + L, Ctrl + S will look up the symbol at the caret
+   *Ctrl + L, Ctrl + D will look up the definition under the caret
+   *Ctrl + L, Ctrl + E will look up the functions called by the function under the caret
+   *Ctrl + L, Ctrl + R will look up all functions that call the function under the cursor
+   *Note that this plugin overrides Ctrl + Shift + [ and ] which are how you fold code by default, so you may want to remap these (or remove them altogether). They will allow you to jump back and forward.
+   *If you notice that using the results list to jump to the spot in the code you are looking for isn't quite lining up with where you are actually placed in the source file, this means you need to rebuild your cscope database again.
+   *[https://github.com/ameyp/CscopeSublime Github Page]
+ *The rtags plugin is more involved to run. Other folks are working on getting rdm working and once that is more stable I will revisit this section. Until then, feel free to install it and give it a try, it works but doesn't seem as easy to use as cscope. It is absolutely more accurate than cscope is however, if that is critical to you then this is the plugin for you.
+  *[https://github.com/rampage644/sublime-rtags Github Page]
+
 == Goto Compile Error ==
+
+ *The build functionality is limited for sublime, so in that sense there isn't much of a way to navigate to compile errors. You can set up a build system for SDS2 that has filters in the output so it will show you what exactly the problem is in the build output, but if you're used to using the command line for building already it really won't do much for you. If you have file specific errors, the Sublime Linter plugin mentioned further down will help find errors in the currently open file.
+ *Sublime Linter Shortcuts:
+  *Ctrl + K, n - Go to next error
+  *Ctrl + K, p - Go to previous error
+  *Ctrl + K, a - Show all errors
 
 == Window Navigation ==
 
@@ -30,9 +55,10 @@ attachment:goto_stringing_example.png
  *Alt + Shift + 8 will give you 2 rows
  *Alt + Shift + 9 will give you 3 rows
  *Ctrl + [1-4] will move the cursor focus to each window, depending on how many you have open. You can also set up keybindings for next and previous if so desired (default is Ctrl + Tab and Ctrl + Shift + Tab) .
- *Origami (Plugin)
  *Ctrl + Shift + [1-4] will move the current tab (open file) to the window you desire.
-  *The Origami plugin lets you create window panes however you desire. Their [https://github.com/SublimeText/Origami Github Page] has more information.
+ *Origami (Plugin)
+  *The Origami plugin lets you create window panes however you desire. I have recently installed this but haven't tried playing with it yet.
+  *[https://github.com/SublimeText/Origami Github Page]
 
 = Editing Tools =
 -----
@@ -44,9 +70,9 @@ attachment:goto_stringing_example.png
 
 == Code Completion ==
  *Auto Complete (Built In)
-  *Auto complete is built into Sublime Text, it will search using open files as well as files inside of your project. The setting '''auto_complete_commit_on_tab''' will allow you to use the tab key to complete rather than hitting enter, if that is your preference.
-   *Auto complete can be turned off for languages if you set '''auto_complete''' to false in the language file in question, or you can turn it off completely in the user settings file.
-   *Auto complete can also be turned off for larger files if it is slowing you down using the '''auto_complete_size_limit''' setting, although I've never had a problem with it (even working in memb_dtl.c).
+  *Auto complete is built into Sublime Text, it will search using open files as well as files inside of your project. The setting {{{auto_complete_commit_on_tab}}} will allow you to use the tab key to complete rather than hitting enter, if that is your preference.
+   *Auto complete can be turned off for languages if you set {{{auto_complete}}} to false in the language file in question, or you can turn it off completely in the user settings file.
+   *Auto complete can also be turned off for larger files if it is slowing you down using the {{{auto_complete_size_limit}}} setting, although I've never had a problem with it (even working in memb_dtl.c).
  *ClangAutoComplete (Plugin)
   *The built in auto complete has always been good enough for me but I've also played around with the ClangAutoComplete plugin. It seems to work well, but I haven't fiddled with it enough to see how useful it really is. I suspect an afternoon of twiddling would probably be sufficient to make it work the way you want.
   *[https://github.com/pl-ca/ClangAutoComplete Github Page]
@@ -55,32 +81,40 @@ attachment:goto_stringing_example.png
   *Snippets can have placeholders that you define that allow you to tab to them once the snippet has been placed. They are placed using {$1} where the number is the tab order of the placeholders.
   *You can write your own, but there are plenty of snippet packages out there via Package Control. cpp-sublime-snippet is one such that I have recently found and started using.
    *[https://github.com/Rapptz/cpp-sublime-snippet Github Page]
-   *Other snippets can be found by hitting Ctrl + Shift + P, then type Install (to bring up the Package Manager Install program) and then type '''Snippet''' and a list of packages with snippet in the name will be displayed.
+   *Other snippets can be found by hitting Ctrl + Shift + P, then type Install (to bring up the Package Manager Install program) and then type {{{Snippet}}} and a list of packages with snippet in the name will be displayed.
 
 == Beautify Code ==
-
-== Comment Formatting ==
+ *There appears to be a plugin called "Uncrustify" for this, which requires a program called Uncrustify installed. I have not tried this yet.
+  *[https://packagecontrol.io/packages/Uncrustify Github Page]
 
 == Doxygen Comment Formatting ==
+ *The plugin DoxyDoxygen (and DoxyDoxygen(evolution)) do this rather well. The "(evolution)" version is just the beta channel and seems to be rather stable.
+  */** + Enter to generate documentation of the following definition
+  *Alt + Q to generate documentation of the nearest definition
+  *Alt + Q to wrap and/or update existing documentation
+  *Eol to goto next column
+  *Ctrl + Space to insert snippets
 
 == Active Syntax Checking ==
- *For active syntax checking i use [http://www.sublimelinter.com/en/latest/ SublimeLinter3], with the [https://github.com/nirm03/SublimeLinter-clang SublimeLinter-clang] plugin. See my page on [[JoshDonnerSublimeLinterClangSettings|Sublime Linter Clang Settings]] for how I have it configured. This is a relatively new plugin for me, so it may not be perfect yet.
+ *For active syntax checking i use [http://www.sublimelinter.com/en/latest/ SublimeLinter3], with the [https://github.com/nirm03/SublimeLinter-clang SublimeLinter-clang] plugin. See my page on [:JoshDonnerSublimeLinterClangSettings:Sublime Linter Clang Settings] for how I have it configured. This is a relatively new plugin for me, so it may not be perfect yet.
 
 = Debugging Tools =
 -----
-== Breakpoints ==
-
-== Source Line Stepping ==
-
-== Inspect Stack ==
-
-== View Variables ==
+ *For each of the following functions, there is really only one plugin that will do most of these things, and it is SublimeGDB. While an excellent plugin, I found it too clunky to use after having become used to using gdb from the command line. I did get it working on my machine though, so if you want to give it a go let me know, I have wiki links on the configuration I used.
+  *Breakpoints
+  *Source Line Stepping
+  *Inspect Stack
+  *View Variables
+  *[https://github.com/quarnster/SublimeGDB Github Page]
+  *[:JoshDonnerSublimeGdbSettings:My Sublime GDB Settings]
 
 = Refactoring Tools =
 -----
 == Change Symbol Name ==
+ *There doesn't seem to be a plugin that handles this currently.
 
 == Surround Tool ==
+ *I'm not sure what this is.
 
 = Other =
 -----
@@ -96,22 +130,38 @@ attachment:git_gutter.png
 == SDS2 Plugins ==
 
  *Vimdendation
+  *I wrote this to enable Sublime Text to work with our indentation scheme here at Design Data. ST has a concept of tabs instead of spaces, as well as a setting to indicate the number of spaces to use for tabs, but there is no setting to set how many spaces an indent is. This plugin requires a few settings be tweaked:
+   *{{{detect_indentation}}} needs to be set to false
+   *The following keymaps should be added in the User keymaps file:
+    {{{
+    { "keys": ["tab"], "command": "vim_tab_press", "context":
+    [
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false }
+    ]
+    },
+    { "keys": ["shift+tab"], "command": "vim_shift_tab_press" },
+    }}}
 
  *Add To Makefile.local
-
- *Go To Header
+  *This one is pretty self explanatory, it will add the current file to Makefile.local if it isn't already there.
+  *This one is a context menu entry, but you could easily add a keybinding like so:
+  {{{
+  { "keys": ["alt+super+a"], "command": "add_to_make_file" }
+  }}}
 
 == Other Things to Consider ==
 
  *Alias
-  *I like to have an alias set up so I can open things in Sublime from the command line. '''alias subl='/usr/bin/sublime-text'''' will do the trick.
-  *Appending '''-a''' to the '''subl''' command will open the file/folder in the currently open window if you have one up already.
+  *I like to have an alias set up so I can open things in Sublime from the command line. {{{alias subl='/usr/bin/sublime-text'}}} will do the trick.
+  *Appending {{{-a}}} to the {{{subl}}} command will open the file/folder in the currently open window if you have one up already.
 
  *Multiple Carets
   *Holding down Ctrl while clicking will place a caret wherever you click. Pressing Ctrl + U will undo the last caret added.
   *Holding down Alt + Shift and pressing the Up or Down arrows will cause the caret to be duplicated on the line above/below the current caret.
   *Pressing Ctrl + D while the caret is in a word/symbol (or with a word or symbol selected) will cause Sublime Text to find and select the next instance of that word/symbol. Repeating Ctrl + D will continue to select each subsequent instance of that word/symbol until all are found. There will be carets placed at each word.
   *Holding down Shift while dragging using the right click on the mouse will allow you to select very specfic sections of text.
+
+  attachment:multiple_carets.gif
 
  *Selection Tricks
   *Ctrl + Shift + M will select the code from curly brace to curly brace (or square braces, or parens). Repeating the command will increase the selection level.
@@ -122,9 +172,30 @@ attachment:git_gutter.png
 
 === Handy Plugins ===
 -----
- *Alignment
- *Bracket Highlighter
- *Terminal
+ *Alignment is a little plugin that allows you to easily adjust the alignment of structures in code.
+  *[https://github.com/wbond/sublime_alignment Github Page]
+
+  attachment:align.gif
+
+ *Bracket Highlighter allows you to customize how brackets and caret position are highlighted in the editor to make it easier to read and navigate. I have examples of what to add to your theme file to enable this [:JoshDonnerBracketHighlighterThemeSettings:here.]
+  *[https://github.com/facelessuser/BracketHighlighter Github Page]
+
+  attachment:brackethighlighter.png
+
+ *Function Name Display shows the name of the current function your caret is in at the bottom left of the editor. This is handy when you're in a giant function or perhaps are just disoriented.
+  *[https://github.com/akrabat/SublimeFunctionNameDisplay Github Page]
+
+ *Terminal allows you to open a terminal at the current open file's location or the project folder.
+  *Ctrl + Shift + T opens at the file
+  *Ctrl + Shift + Alt + T opens at the project folder
+  *[https://packagecontrol.io/packages/Terminal Package Control Page]
+
+ *Trailing Spaces will show you any lines in the file that have trailing spaces.
+  *Highlighting can be turned on and off using a key command such as (note this overrides a default keybinding):
+  {{{
+  { "keys": ["ctrl+shift+d"], "command": "toggle_trailing_spaces" }
+  }}}
+  *[https://packagecontrol.io/packages/TrailingSpaces Package Control Page]
 
 === Settings File ===
 -----
@@ -134,6 +205,6 @@ I use Github to store my settings and sync them across my various machines that 
 
  *User Settings
   *Excluding files/folders from Sublime Text
-   *There are 3 settings that will accomplish this. '''file_exclude_patterns''' and '''folder_exclude_patterns''' work the way one might expect with one exception: they will omit files from the sidebar as well as any Goto searches. To leave the files in the sidebar but omit from searches use '''binary_file_patterns'''.
+   *There are 3 settings that will accomplish this. {{{file_exclude_patterns}}} and {{{folder_exclude_patterns}}} work the way one might expect with one exception: they will omit files from the sidebar as well as any Goto searches. To leave the files in the sidebar but omit from searches use {{{binary_file_patterns}}}.
  *Syntax Settings
-  *There are some settings that make working on SDS2 easier, if you set up your C++.sublime-settings file to look like mine it should make life much easier. See [http://lucky.dsndata.com/cgi-bin/moin.cgi/JoshDonnerCandC++SyntaxSettings My Syntax Settings]
+  *There are some settings that make working on SDS2 easier, if you set up your C++.sublime-settings file to look like mine it should make life much easier. See [:JoshDonnerCandC++SyntaxSettings:My Syntax Settings]
