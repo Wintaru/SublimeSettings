@@ -64,6 +64,7 @@ attachment:goto_stringing_example.png
 == Doxygen Comment Formatting ==
 
 == Active Syntax Checking ==
+ *For active syntax checking i use [http://www.sublimelinter.com/en/latest/ SublimeLinter3], with the [https://github.com/nirm03/SublimeLinter-clang SublimeLinter-clang] plugin. See my page on [[JoshDonnerSublimeLinterClangSettings|Sublime Linter Clang Settings]] for how I have it configured. This is a relatively new plugin for me, so it may not be perfect yet.
 
 = Debugging Tools =
 -----
@@ -84,6 +85,13 @@ attachment:goto_stringing_example.png
 = Other =
 -----
 == Version Control ==
+
+ *There is a git plugin for Sublime that is pretty full featured. There ia a [https://github.com/kemayo/sublime-text-git/wiki wiki page] for it as well.
+  *[https://github.com/kemayo/sublime-text-git Github Page]
+ *I also like to use a plugin called GitGutter that shows changed lines in the gutter of the file being edited.
+  *[https://github.com/jisaacks/GitGutter Github Page]
+
+attachment:git_gutter.png
 
 == SDS2 Plugins ==
 
@@ -114,6 +122,8 @@ attachment:goto_stringing_example.png
 
 === Handy Plugins ===
 -----
+ *Alignment
+ *Bracket Highlighter
  *Terminal
 
 === Settings File ===
