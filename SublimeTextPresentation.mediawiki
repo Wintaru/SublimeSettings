@@ -1,3 +1,5 @@
+[[TableOfContents]]
+
 = Package Control =
 -----
 Before I talk about anything else I want to let you know about [https://packagecontrol.io/ Package Control]. This plugin is almost a requirement when working with Sublime Text because of how easy it makes it to install plugins. Visit the site and run the install script in the console (Ctrl + ~) before continuing. Trust me.
@@ -129,7 +131,7 @@ attachment:git_gutter.png
 
 == SDS2 Plugins ==
 
- *Vimdendation
+ *Vimdentation
   *I wrote this to enable Sublime Text to work with our indentation scheme here at Design Data. ST has a concept of tabs instead of spaces, as well as a setting to indicate the number of spaces to use for tabs, but there is no setting to set how many spaces an indent is. This plugin requires a few settings be tweaked:
    *{{{detect_indentation}}} needs to be set to false
    *The following keymaps should be added in the User keymaps file:
@@ -172,11 +174,6 @@ attachment:git_gutter.png
 
 === Handy Plugins ===
 -----
- *Alignment is a little plugin that allows you to easily adjust the alignment of structures in code.
-  *[https://github.com/wbond/sublime_alignment Github Page]
-
-  attachment:align.gif
-
  *Bracket Highlighter allows you to customize how brackets and caret position are highlighted in the editor to make it easier to read and navigate. I have examples of what to add to your theme file to enable this [:JoshDonnerBracketHighlighterThemeSettings:here.]
   *[https://github.com/facelessuser/BracketHighlighter Github Page]
 
