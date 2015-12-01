@@ -1,7 +1,5 @@
 = Navigation Tools =
-
 -----
-
 == Goto Defnition (Function/Class/Constant) ==
 
  *Goto Anything (Built into Sublime Text)
@@ -37,10 +35,12 @@ attachment:goto_stringing_example.png
   *The Origami plugin lets you create window panes however you desire. Their [https://github.com/SublimeText/Origami Github Page] has more information.
 
 = Editing Tools =
-
 -----
-
 == Editor Emulation (Key Binding) ==
+
+ *All of the default key bindings are in Preferences -> Key Bindings - Default. You can override these as you wish using the Key Bindings - User settings file.
+  *If you have set up some key bindings and all of a sudden they stop working, or you installed a package and the key bindings for the package aren't working, you can install the package FindKeyConflicts which will show you every key binding conflict in all of your settings/packages.
+   *[https://github.com/skuroda/FindKeyConflicts Github Page]
 
 == Code Completion ==
  *Auto Complete (Built In)
@@ -66,9 +66,7 @@ attachment:goto_stringing_example.png
 == Active Syntax Checking ==
 
 = Debugging Tools =
-
 -----
-
 == Breakpoints ==
 
 == Source Line Stepping ==
@@ -78,17 +76,13 @@ attachment:goto_stringing_example.png
 == View Variables ==
 
 = Refactoring Tools =
-
 -----
-
 == Change Symbol Name ==
 
 == Surround Tool ==
 
 = Other =
-
 -----
-
 == Version Control ==
 
 == SDS2 Plugins ==
