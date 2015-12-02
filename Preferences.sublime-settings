@@ -78,8 +78,8 @@
 	{
 		"show_pretty_keys": true
 	},
-	"line_padding_bottom": 0,
-	"line_padding_top": 0,
+	"line_padding_bottom": -.5,
+	"line_padding_top": -.5,
 	"margin": -4,
 	"remember_full_screen": true,
 	"rulers":
