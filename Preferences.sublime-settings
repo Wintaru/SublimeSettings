@@ -5,7 +5,7 @@
 	"auto_indent": true,
 	"caret_extra_width": 1,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"color_scheme": "Packages/User/Color Scheme/Monokai.tmTheme",
 	"detect_indentation": false,
 	"draw_minimap_border": true,
 	"draw_white_space": "all",
@@ -59,7 +59,12 @@
 		".swishindex*",
 		"sds2-*-g*",
 		"html",
-		"bin"
+		"bin",
+		"*Convert*",
+		"*convert*",
+		"*DWFToolkit-7.5*",
+		"tools*",
+		"*debug*"
 	],
 	"font_face": "M+ 2m Regular",
 	"font_options":
@@ -78,8 +83,8 @@
 	{
 		"show_pretty_keys": true
 	},
-	"line_padding_bottom": -.5,
-	"line_padding_top": -.5,
+	"line_padding_bottom": -0.5,
+	"line_padding_top": -0.5,
 	"margin": -4,
 	"remember_full_screen": true,
 	"rulers":
