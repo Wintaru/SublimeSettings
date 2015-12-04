@@ -8,6 +8,8 @@
 		"Alignment",
 		"BracketHighlighter",
 		"C++ Snippets",
+		"ClangAutoComplete",
+		"Compare Side-By-Side",
 		"Cscope",
 		"DoxyDoxygen (evolution)",
 		"FindKeyConflicts",
@@ -18,9 +20,11 @@
 		"Origami",
 		"Package Control",
 		"Select Quoted",
+		"SublimeGDB",
 		"SublimeLinter",
 		"SublimeLinter-contrib-clang",
 		"Terminal",
+		"Theme - Cobalt2",
 		"TrailingSpaces"
 	]
 }
