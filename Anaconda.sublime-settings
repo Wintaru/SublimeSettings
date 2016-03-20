@@ -1,0 +1,9 @@
+{
+    "anaconda_linting": true,
+    "anaconda_linter_mark_style": "none",
+    "anaconda_linter_underlines": false,
+    "pep8_ignore":
+    [
+        "E731" // Ignore lambda style issues
+    ]
+}

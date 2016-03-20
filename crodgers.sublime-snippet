@@ -1,0 +1,39 @@
+<snippet>
+    <content><![CDATA[
+        import Designable.ProcessableMember as ProcessableMember
+        import sds2.utility.gadget_protocol_member as gpm
+        import Desinable.Proxies as Proxies
+
+
+        class ${1: CustomMemberName}(gpm.GadgetMember, ProcessableMember.ProcessableMember):
+            def __init__(self, *args, **kwargs):
+                ProcessableMember.ProcessableMember.__init__(self, ${2: *args}, ${3: **kwargs})
+
+            def Add(self):
+                #insert add code here
+                return True
+
+            def OnCopy(self):
+                #insert copy code
+                pass
+
+            def Mirror(self):
+                #insert mirror code
+                pass
+
+            def GetAlternateMembLinePoints(self):
+                #if your member line is irregular
+
+                #populate the list with the points that make up your
+                #irregular member line
+                return []
+
+            def DesignForMember(self, mn):
+                #design and add material
+                return True
+
+]]></content>
+    <!-- <tabTrigger>custom</tabTrigger> -->
+    <scope>*.py</scope>
+    <description>Boilerplate for a Designable Custom Member</description>
+</snippet>

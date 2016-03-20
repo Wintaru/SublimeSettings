@@ -4,8 +4,9 @@
 	"auto_complete_commit_on_tab": true,
 	"auto_complete_delay": 0,
 	"auto_indent": true,
+	"bold_folder_labels": true,
 	"caret_extra_width": 1,
-	"caret_style": "phase",
+	"caret_style": "wide",
 	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"detect_indentation": false,
 	"draw_minimap_border": true,
@@ -61,19 +62,14 @@
 		".swishindex*",
 		"sds2-*-g*",
 		"html",
-		"bin",
-		"*Convert*",
-		"*convert*",
-		"*DWFToolkit-7.5*",
-		"tools*",
-		"*debug*"
+		"bin"
 	],
-	"font_face": "M+ 2m Regular",
+	"font_face": "Operator Mono Book",
 	"font_options":
 	[
 		"subpixel_antialias"
 	],
-	"font_size": 10,
+	"font_size": 10.5,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -85,8 +81,6 @@
 	{
 		"show_pretty_keys": true
 	},
-	"line_padding_bottom": -0.5,
-	"line_padding_top": -0.5,
 	"margin": -4,
 	"remember_full_screen": true,
 	"rulers":
@@ -98,8 +92,10 @@
 	"show_encoding": true,
 	"sidebar_xlarge": true,
 	"tab_size": 8,
+	"theme": "Afterglow.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": false,
 	"update_check": false,
+	"vimdentation_mixed_tabs": false,
 	"word_wrap": false
 }

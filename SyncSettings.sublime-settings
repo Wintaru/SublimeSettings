@@ -1,0 +1,32 @@
+{
+  /**
+    * This token allow to plugin do:
+    * - Create a Gist
+    * - Download a Gist
+    * - Upload a Gist
+   */
+  "access_token": "8b45e00cdc25ce6c020f7ec9fa9f930f34470e07",
+  /**
+    * This option has a list with the excluded files
+   */
+  "excluded_files": [
+    "SyncSettings.sublime-settings",
+    "Package Control.last-run",
+    "Package Control.merged-ca-bundle",
+    "Package Control.user-ca-bundle",
+    "Package Control.system-ca-bundle",
+    "Package Control.cache",
+    ".DS_Store",
+    ".DS_Store?",
+    ".Spotlight-V100",
+    ".Trashes",
+    "ehthumbs.db",
+    "Thumbs.db",
+    ".exe",
+    ".dmg"
+  ],
+  /**
+   * This option has the gist id for upload your configuration
+   */
+  "gist_id": "SublimeTextWorkSettings"
+}

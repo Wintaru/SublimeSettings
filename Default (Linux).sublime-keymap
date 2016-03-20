@@ -7,5 +7,11 @@
     { "keys": ["shift+tab"], "command": "vim_shift_tab_press" },
     { "keys": ["super+v"], "command" : "paste_and_indent" },
     { "keys": ["super+shift+v"], "command": "paste" },
-    { "keys": ["alt+super+a"], "command": "add_to_make_file" }
+    { "keys": ["alt+super+a"], "command": "add_to_make_file" },
+    { "keys": ["ctrl+shift+u"], "command": "rtags_location", "args": {"switches": ["--absolute-path", "-r"]} },
+    { "keys": ["ctrl+shift+i"], "command": "rtags_cursor", "args": {"switches": ["-U"]} },
+    { "keys": ["f2"], "command": "rtags_location", "args": {"switches": ["--absolute-path", "-f"]} },
+    { "keys": ["alt+minus"], "command": "rtags_go_backward" },
+    { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+    { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
 ]
